@@ -6,6 +6,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+import javax.ws.rs.Path;
+import javax.ws.rs.PathParam;
 import java.util.List;
 
 @RestController
@@ -28,4 +30,18 @@ public class EntryController {
     public Entry createEntry(@Valid @RequestBody Entry entry) {
         return entryService.createEntry(entry);
     }
+
+    @DeleteMapping("{id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void deleteEntries(@PathVariable("id") long id) {
+        entryService.deleteEntry(id);
+    }
+
+    @PutMapping("/{id}")
+    @ResponseStatus(HttpStatus.OK)
+    public Entry updateEntry(@Valid @RequestBody Entry entry) {
+        return entryService.updateEntry(entry);
+    }
+
+
 }
