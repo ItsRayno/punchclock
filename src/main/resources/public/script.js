@@ -23,7 +23,8 @@ const createEntry = (e) => {
     fetch(`${URL}/entries`, {
         method: 'POST',
         headers: {
-            'Content-Type': 'application/json'
+            'Content-Type': 'application/json',
+        'Authorization': localStorage.getItem('auth')
         },
         body: JSON.stringify(entry)
     }).then((result) => {
@@ -38,7 +39,10 @@ const createEntry = (e) => {
 
 const indexEntries = () => {
     fetch(`${URL}/entries`, {
-        method: 'GET'
+        method: 'GET',
+        headers: {
+            'Authorization': localStorage.getItem('auth')
+        }
     }).then((result) => {
         result.json().then((result) => {
             entries = result;
@@ -52,7 +56,11 @@ const indexEntries = () => {
 
 const deleteEntries = (id) => {
     fetch(`${URL}/entries/${id}`, {
-        method: 'DELETE'
+        method: 'DELETE',
+        headers: {
+            'Authorization': localStorage.getItem('auth')
+        }
+
     }).then((result) => {
        indexEntries();
     });
@@ -73,7 +81,8 @@ const updateEntry = (entry) => {
     fetch(`${URL}/entries/${entry.id}`, {
         method: 'PUT',
         headers: {
-            'Content-Type': 'application/json'
+            'Content-Type': 'application/json',
+        'Authorization': localStorage.getItem('auth')
         },
         body: JSON.stringify(entry)
     }).then((result) => {
@@ -96,7 +105,8 @@ const editEntry = (e) =>{
     fetch(`${URL}/entries`, {
         method: 'PUT',
         headers: {
-            'Content-Type': 'application/json'
+            'Content-Type': 'application/json',
+            'Authorization': localStorage.getItem('auth')
         },
         body: JSON.stringify(entry)
     }).then((result) => {

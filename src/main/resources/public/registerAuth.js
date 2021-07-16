@@ -2,9 +2,6 @@ const URL = 'http://localhost:8081';
 
 
 
-
-
-
 const createUser = (e) => {
     e.preventDefault();
     const formData = new FormData(e.target);
@@ -20,8 +17,8 @@ const createUser = (e) => {
         body: JSON.stringify(entry)
     }).then((result) => {
         result.json().then((entry) => {
-        window.location.href="/login.html";
-
+            console.log('Response:', response)
+            return response.json();
         });
     });
 };
@@ -29,7 +26,11 @@ const createUser = (e) => {
 
 
 document.addEventListener('DOMContentLoaded', function(){
+    const sumbitButton = document.getElementById("submit");
     const createUserForm = document.querySelector('#registerForm');
         createUserForm.addEventListener('submit', createUser);
 
+        sumbitButton.onclick = function (){
+        window.location.href="login.html";
+    }
 });

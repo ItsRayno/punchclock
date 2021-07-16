@@ -17,10 +17,8 @@ const loginUser = (e) => {
             'Content-Type': 'application/json'
         },
         body: JSON.stringify(entry)
-    }).then((result) => {
-        result.json().then((entry) => {
-            window.location.href="login.html";
-        });
+    }).then((result)=> {
+        window.localStorage.setItem('auth',result.headers.get("Authorization"));
     });
 };
 
@@ -30,7 +28,12 @@ const loginUser = (e) => {
 
 
 document.addEventListener('DOMContentLoaded', function(){
+    const submitButton = document.getElementById("submit");
     const loginUserForm = document.querySelector('#loginForm');
     loginUserForm.addEventListener('submit', loginUser);
+
+    submitButton.onclick = function (){
+            window.location.href="index.html";
+    }
 
 });
