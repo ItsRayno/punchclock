@@ -18,7 +18,7 @@ Man kann sich zurzeit auf der localhost:8081/register.html Seite registrieren un
 Nun gelangt man zum User Dashboard wenn man die Role User auch hat.
 Die verzweigung zum Admin Dashboarrd funktioniert leider noch nicht. deshalb muss man auch hier Manuell darauf zugreifen :
 
-ocalhost:8081/adminDashboard.html
+localhost:8081/adminDashboard.html
 
 Auf dieser Seite kann der Admin alles Users verwalten(Create, Edit and Delete).
 
