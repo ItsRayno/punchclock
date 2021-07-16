@@ -1,0 +1,30 @@
+body{
+    background-color: #9ef2fc;
+}
+#login{
+    background-color: azure;
+}
+
+#login:hover{
+    background-color: #d8d8d8;
+    color: azure;
+}
+
+main{
+    margin: auto;
+    width: 50%;
+    padding: 10px;
+}
+
+div{
+    margin: auto;
+}
+
+
+/*
+Farben aus Farbschema
+- #fee599 gelb
+- #bdf5a5 grün
+- #9ef2fc blau
+- #d8d8d8 grau
+*/
