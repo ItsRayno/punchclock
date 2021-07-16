@@ -17,6 +17,15 @@ public class Role {
     @OneToMany(targetEntity=ApplicationUser.class, mappedBy="role",cascade=CascadeType.ALL, fetch = FetchType.LAZY)
     private List<ApplicationUser> applicationUsers = new ArrayList<>();
 
+    public Role(String roleName, Long id) {
+        this.roleName = roleName;
+        this.id = id;
+    }
+
+    public Role() {
+
+    }
+
 
     public void setId(Long id) {
         this.id = id;

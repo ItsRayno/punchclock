@@ -16,7 +16,8 @@ const loginUser = (e) => {
         headers: {
             'Content-Type': 'application/json'
         },
-        body: JSON.stringify(entry)
+        body:
+            JSON.stringify(entry)
     }).then((result)=> {
         window.localStorage.setItem('auth',result.headers.get("Authorization"));
     });
